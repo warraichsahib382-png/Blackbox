@@ -17,11 +17,11 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name: set up JDK 11
+      - name: set up JDK 8
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'adopt'
+          java-version: '8'
+          distribution: 'temurin'
           cache: gradle
 
       - name: Grant execute permission for gradlew
@@ -30,13 +30,10 @@ jobs:
       - name: Build release apk
         uses: eskatos/gradle-command-action@v1
         with:
-          arguments: assembleRelease
-          distributions-cache-enabled: true
-          dependencies-cache-enabled: true
-          configuration-cache-enabled: true
+          arguments: assembleRelease --no-configuration-cache
 
       - name: Upload Apk
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: apk-release
+          name: BlackBox-release
           path: app/build/outputs/apk/release
