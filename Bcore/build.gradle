@@ -84,7 +84,4 @@ tasks.whenTaskAdded { task ->
     if (task.name == "generateJsonModelDebug" || task.name == "generateJsonModelRelease") {
         task.enabled = false
     }
-    if (task.name == "externalNativeBuildDebug" || task.name == "externalNativeBuildRelease") {
-        task.enabled = false
-    }
 }
