@@ -27,13 +27,13 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build release apk
+      - name: Build debug apk
         uses: eskatos/gradle-command-action@v2
         with:
-          arguments: assembleRelease
+          arguments: assembleDebug
 
       - name: Upload Apk
         uses: actions/upload-artifact@v4
         with:
-          name: BlackBox-release
-          path: app/build/outputs/apk/release
+          name: BlackBox-debug
+          path: app/build/outputs/apk/debug
