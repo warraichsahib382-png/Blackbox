@@ -21,7 +21,7 @@ allprojects {
         google()
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'http://maven.xdja.com:8081/nexus3/service/rest/repository/browse/aliyun/' }
+        maven { url 'https://maven.xdja.com/nexus3/service/rest/repository/browse/aliyun/' }
 //        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 }
